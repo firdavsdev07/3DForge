@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+/* Define color variables for light and dark themes */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-light: #ffffff;
+  --foreground-light: #111827;
+  --primary-light: #3b82f6;
+  --secondary-light: #f3f4f6;
+  --accent-light: #6366f1;
+
+  --background-dark: #030712;
+  --foreground-dark: #f9fafb;
+  --primary-dark: #60a5fa;
+  --secondary-dark: #1f2937;
+  --accent-dark: #818cf8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Light theme by default */
+@theme {
+  --color-background: var(--background-light);
+  --color-foreground: var(--foreground-light);
+  --color-primary: var(--primary-light);
+  --color-secondary: var(--secondary-light);
+  --color-accent: var(--accent-light);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Dark theme when .dark class is present */
+.dark {
+  @theme {
+    --color-background: var(--background-dark);
+    --color-foreground: var(--foreground-dark);
+    --color-primary: var(--primary-dark);
+    --color-secondary: var(--secondary-dark);
+    --color-accent: var(--accent-dark);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* 3D Cube Animation */
+.scene {
+  perspective: 600px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 192px; /* w-48 */
+  height: 192px; /* h-48 */
+  border: 1px solid var(--color-foreground);
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 80%,
+    transparent
+  );
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(96px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(96px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(96px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(96px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(96px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(96px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
 }
