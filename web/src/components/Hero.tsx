@@ -24,7 +24,9 @@ const Hero = () => {
           Showcase Your <span className="text-accent">3D</span> Creations
         </h1>
         <p className="max-w-2xl mx-auto lg:mx-0 text-lg text-foreground/80">
-          3DForge is a platform where users can upload their 3D models, add titles and descriptions, and share them with the world. A simple and elegant way to display your digital craftsmanship.
+          3DForge is a platform where users can upload their 3D models, add
+          titles and descriptions, and share them with the world. A simple and
+          elegant way to display your digital craftsmanship.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a

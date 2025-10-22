@@ -22,9 +22,12 @@ const Navbar = () => {
           <span className="text-xl font-bold text-foreground">3DForge</span>
         </Link>
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full hover:bg-secondary transition-colors">
+          <Link
+            href="/upload"
+            className="p-2 rounded-full hover:bg-secondary transition-colors"
+          >
             <Upload className="h-5 w-5 text-foreground" />
-          </button>
+          </Link>
           {isAuthenticated ? (
             <button className="flex items-center gap-2 p-2 rounded-full hover:bg-secondary transition-colors">
               <User className="h-5 w-5" />
