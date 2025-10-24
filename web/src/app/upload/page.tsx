@@ -1,4 +1,4 @@
-"use client";
+/*  */ "use client";
 
 import { useState } from "react";
 import { Upload, File, X } from "lucide-react";
@@ -54,7 +54,7 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-8 py-12">
+    <div className="max-w-screen-2xl mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tighter mb-4">

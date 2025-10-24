@@ -18,7 +18,7 @@ const Cube = () => (
 
 const Hero = () => {
   return (
-    <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center text-center lg:text-left min-h-[calc(100vh-4rem)] gap-12 px-4 sm:px-8">
+    <section className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center text-center lg:text-left min-h-[calc(100vh-4rem)] gap-12 px-6">
       <div className="flex-1 space-y-6">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">
           Showcase Your <span className="text-accent">3D</span> Creations
